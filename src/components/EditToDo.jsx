@@ -3,7 +3,7 @@ import Button from "react-bootstrap/Button";
 import Modal from "react-bootstrap/Modal";
 import Form from "react-bootstrap/Form";
 import { useDispatch, useSelector } from "react-redux";
-import { updateToDo } from "../redux/reducers/ToDoSlice";
+import { updateToDo } from "../redux/reducers/todosSlice";
 
 function EditToDo({ show, onClose }) {
   const todo = useSelector((state) => state.todos.selectedToDo);

@@ -8,7 +8,7 @@ import {
   deleteTodo,
   selectedToDo,
   toggleTodo,
-} from "../redux/reducers/ToDoSlice";
+} from "../redux/reducers/todosSlice";
 
 function ToDoListItem({ todo, handleShow }) {
   const dispatch = useDispatch();

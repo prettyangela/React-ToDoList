@@ -1,16 +1,16 @@
 import React, { useEffect, useState } from "react";
 import { useDispatch } from "react-redux";
-import { addTodo } from "../redux/reducers/ToDoSlice";
+import { addTodo } from "../redux/reducers/todosSlice";
 
 function InputToDo() {
-    const [title, setTitle] = useState('')
+  const [title, setTitle] = useState("");
 
-    const dispatch = useDispatch()
+  const dispatch = useDispatch();
 
-    function handleSubmit() {
-        dispatch(addTodo(title))
-        setTitle('')
-    }
+  function handleSubmit() {
+    dispatch(addTodo(title));
+    setTitle("");
+  }
 
   return (
     <div className="row ">
@@ -24,13 +24,13 @@ function InputToDo() {
             aria-label="What to do"
             aria-describedby="button-addon2"
             name="lala"
-            onChange={e => setTitle(e.target.value)}
+            onChange={(e) => setTitle(e.target.value)}
           />
-          <button 
+          <button
             className="btn btn-primary"
             onClick={handleSubmit}
-            disabled={title === ''}
-            >
+            disabled={title === ""}
+          >
             Add
           </button>
         </div>
