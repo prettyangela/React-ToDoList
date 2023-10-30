@@ -1,7 +1,25 @@
 import { createSlice } from "@reduxjs/toolkit";
 
+const intialTodos = [
+  {
+    id: 1,
+    title: "makan",
+    completed: false,
+  },
+  {
+    id: 2,
+    title: "bermain",
+    completed: false,
+  },
+  {
+    id: 3,
+    title: "nonton",
+    completed: false,
+  },
+];
+
 const initialState = {
-  todos: [],
+  todos: intialTodos,
   selectedToDo: null,
   filter: "all",
 };
