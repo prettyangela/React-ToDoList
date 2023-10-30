@@ -9,12 +9,20 @@ function ToDoList() {
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
 
-  const todos = useSelector((state) => state.todos.todos);
-  console.log(todos);
+  const todos = useSelector((state) => {
+    switch (state.todos.filter) {
+      case "completed":
+        return state.todos.todos.filter((todo) => todo.completed);
+      case "active":
+        return state.todos.todos.filter((todo) => !todo.completed);
+      default:
+        return state.todos.todos;
+    }
+  });
 
   return (
     <>
-      <ul className="list-group">
+      <ul className="list-group mt-5">
         {todos.map((todo) => {
           return (
             <ToDoListItem key={todo.id} todo={todo} handleShow={handleShow} />

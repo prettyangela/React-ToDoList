@@ -3,6 +3,7 @@ import { createSlice } from "@reduxjs/toolkit";
 const initialState = {
   todos: [],
   selectedToDo: null,
+  filter: "all",
 };
 
 export const todosSlice = createSlice({
@@ -37,11 +38,20 @@ export const todosSlice = createSlice({
         state.todos[index] = { id, title, completed };
       }
     },
+    setFilter: (state, action) => {
+      state.filter = action.payload;
+    },
   },
 });
 
 // Action creators are generated for each case reducer function
-export const { addTodo, toggleTodo, deleteTodo, selectedToDo, updateToDo } =
-  todosSlice.actions;
+export const {
+  addTodo,
+  toggleTodo,
+  deleteTodo,
+  selectedToDo,
+  updateToDo,
+  setFilter,
+} = todosSlice.actions;
 
 export default todosSlice.reducer;
